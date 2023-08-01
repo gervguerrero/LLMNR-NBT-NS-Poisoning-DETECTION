@@ -146,3 +146,12 @@ The fact there is no context in the NTLM logs, not much given in the Weird logs,
 If PCAP analysis was available I would have investigated it in wireshark or the Security Onion PCAP analysis tool to get a better understanding of what's happening.
 
 It's important to note that during this LLMNR-NBT-NS-Poisoning attack, no Suricata alerts were generated or seen. This attack is a prime example of not depending on alerts and IDS alone, and to be proactive in threat hunting in the network by finding anomalies in the baseline of the defended network. If PCAP analysis was available, perhaps analyzing the traffic and finding concrete evidence of LLMNR-NBT-NS-Poisoning would lead to creating custom alerts using those signatures or formats seen. 
+
+## Preventing the Attack 
+
+The best defensive approach to prevent LLMNR and NBT-NS poisoning, is a layered defense approach:
+1. Disable LLMNR/NBTNS.
+2. If it cannot be disabled in the network, implement strong access control with network segregation and subnets. If the attacker is isolated in another network, they cannot perform this attack.
+3. Implement stronger, longer, more complex passwords. The more of these characteristics are implemented in password policy, the longer and harder they will be to crack for an attacker. 
+
+🟥 **To view this attack from a Red Team network attacker's perspective, see** [LLMNR-NBT-NS-Poisoning-ATTACK](https://github.com/gervguerrero/LLMNR-NBT-NS-Poisoning-ATTACK). 🟥
