@@ -64,7 +64,7 @@ Orig Host is UPPERCASE, Responder is lowercase
 - R: Packet with RST bit set
 
 ### Analyst Notes:
-From a security analyst point of view, viewing this in the Conn dashboard is a definitely odd behavior.
+From a security analyst point of view, viewing this in the Conn dashboard is odd behavior.
 
 Due to the lack of enterprise network assets in this small project, we aren't able to exactly baseline if other computers are doing the exact same thing to this "SMB Server" as we would in a real world scenario.  
 
