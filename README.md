@@ -68,7 +68,7 @@ From a security analyst point of view, viewing this in the Conn dashboard is a d
 
 Due to the lack of enterprise network assets in this small project, we aren't able to exactly baseline if other computers are doing the exact same thing to this "SMB Server" as we would in a real world scenario.  
 
-Based on these following observations, we can make a conlusion that this is an anomoaly that should be investigated or clarified.
+Based on these following observations, we can make a conlusion that this is an anomaly that should be investigated or clarified.
 
 1. The Client is making SMB connections to another computer in the network that is NOT specified as an SMB server.
    
