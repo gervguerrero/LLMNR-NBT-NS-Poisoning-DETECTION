@@ -8,7 +8,7 @@ This project is a sub-project to:
 
 Here I explore detecting a man in the middle LLMNR/NBT-NS Poisoning where the attacker to gains an NTLM hash for an account within the ARK.local domain.
 
-I use Security Onion's ELK (Elasticsearch, Logstash, Kibana) stack to analyze network traffic off a phyisical managed switch with a SPAN/Mirror port to observe the attack.  
+I use Security Onion's ELK (Elasticsearch, Logstash, Kibana) stack to analyze network traffic off a phyisical managed switch with a SPAN/Mirror port.  
 
 Link-Local Multicast Name Resolution and NBT-NS (NetBIOS Name Service) poisoning are attacks used to exploit weaknesses in name resolution protocols found in Windows machines. These protocols are used to identify hosts in the network when DNS doesn't work.
 
@@ -34,5 +34,26 @@ Depending on install settings for Security Onion, either Zeek or Suricata as the
 If you read my [LLMNR-NBT-NS-Poisoning-ATTACK](https://github.com/gervguerrero/LLMNR-NBT-NS-Poisoning-ATTACK), the only action the victim did was enter the attacker's IP in an attempt to connect to it as a share in the File Explorer window. 
 
 ## Security Onion Conn Dashboard 
+![image](https://github.com/gervguerrero/LLMNR-NBT-NS-Poisoning-DETECTION/assets/140366635/de19ec91-1207-423a-9a5c-6e001a8f8a94)
+![image](https://github.com/gervguerrero/LLMNR-NBT-NS-Poisoning-DETECTION/assets/140366635/97f49f07-435a-4b5b-8832-06ed3db8db15)
+![image](https://github.com/gervguerrero/LLMNR-NBT-NS-Poisoning-DETECTION/assets/140366635/8d459fc1-5a84-415d-877d-0fb3cacd3644)
+
+Above we can see the victim 192.168.0.6 connecting to the attacker 192.168.10.99 over SMB port 445, and generated 4 logs under a 1 second timespan.  
+
+In the top picture we can a connection state of OTH and below a Connection History of SADR.
+
+Using [Corelight's Zeek Log Cheatsheet](https://github.com/corelight/zeek-cheatsheets/blob/master/Corelight-Zeek-Cheatsheets-3.0.4.pdf), we can decipher these lettered codes for the connection.
+
+Connection State: OTH
+- No SYN, not closed. Midstream traffic. Partial Connection.
+
+Connection History: SADR
+Orig Host is UPPERCASE, Responder is lowercase
+
+- S: A SYN without the ACK bit Sst
+- A: A pure ACK
+- D: Packet with payload ("data")
+- R: Packet with RST bit set
+
 
 
