@@ -81,4 +81,6 @@ Based on these following observations, we can make a conlusion that this is an a
 ![image](https://github.com/gervguerrero/LLMNR-NBT-NS-Poisoning-DETECTION/assets/140366635/d4c72fc7-294e-40c6-b9fe-e5b8737fb61d)
 ![image](https://github.com/gervguerrero/LLMNR-NBT-NS-Poisoning-DETECTION/assets/140366635/b9e64449-0a8d-4c97-b8d9-3a77c5573a4b)
 
+## Security Onion Weird Dashboard
 
+Seen in the first Security onion picture shown above towards the start, zeek labeled 
