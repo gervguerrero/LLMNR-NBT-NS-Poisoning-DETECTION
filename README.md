@@ -139,7 +139,7 @@ Unfortunately at this point in my project my physical server's power supply host
 
 ## Analysis Conclusion
 
-Based on what was shown in the Conn, Weird, and NTLM dashboard, if this was a real environment I would put it a request for comment (RFC) to the network owners to clarify if this activity is standard or not. Again, in this small SOC lab project we don't have realistic enterprise environments to baseline activity as analysts should in real world scenarios. 
+Based on what was shown in the Conn, Weird, and NTLM dashboard, if this was a real environment I would put in a request for comment (RFC) to the network owners to clarify if this activity is standard or not. Again, in this small SOC lab project we don't have realistic enterprise environments to baseline activity as analysts should in real world scenarios. 
 
 The fact there is no context in the NTLM logs, not much given in the Weird logs, and only data sent from the client to another workstation that supposedly has SMB shares open in a non standard TCP handshake format makes this an anomaly that should be looked into. The lack of information given makes the intent of it hard to determine and may indicate malicious activity.
 
